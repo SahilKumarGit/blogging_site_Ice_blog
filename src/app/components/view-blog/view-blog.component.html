@@ -1,0 +1,49 @@
+<div class="main" #isScroll id="ppi">
+  <div *ngIf="DATA && !error" class="container">
+    <div class="topX">
+      <div class="profile">
+        <img [src]=" DATA.current.userId.profilePic || 'assets/image/user.png' " alt="" />
+        <div class="name">
+          {{ DATA.current.userId.name }}
+          <img *ngIf="DATA.current.userId.verified" src="assets/image/verified.png" title="verified user" alt="">
+        </div>
+      </div>
+      <div class="options">
+        <div *ngIf="!DATA.canEdit_Delete" [matTooltip]="'Add Bookmark'" (click)="makeBookMark()" class="btn-icon" matRipple [matRippleColor]="'#d1d1d160'">
+          <i class="fi fi-rr-bookmark"></i>
+        </div>
+        <div *ngIf="!DATA.canEdit_Delete" [matTooltip]="'Report blog'" class="btn-icon more" matRipple [matRippleColor]="'#d1d1d160'">
+          <i class="fi fi-rr-bug"></i>
+        </div>
+        <div *ngIf="DATA.canEdit_Delete" [matTooltip]="'Delete Blog'" (click)="makeDelete()" class="btn-icon" matRipple [matRippleColor]="'#d1d1d160'">
+          <i class="fi fi-rr-trash"></i>
+        </div>
+        <div *ngIf="DATA.canEdit_Delete" [matTooltip]="'Edit Blog'" routerLink="/editor/{{DATA.current._id}}" class="btn-icon more" matRipple [matRippleColor]="'#d1d1d160'">
+          <i class="fi fi-rr-pencil"></i>
+        </div>
+      </div>
+    </div>
+    <div class="topTwo">
+      <div class="unknown"></div>
+      <div class="dateTime">Published on {{ DATA.current.createdAt | dateTime:'MMM Do YYYY' }}</div>
+    </div>
+    <div class="title">
+      {{DATA.current.title}}
+    </div>
+    <div class="body">
+      <quill-view-html theme="booble" [content]="DATA.current.innerHtml"> </quill-view-html>
+    </div>
+    <div *ngIf="DATA.list.length > 0" class="recomendations">
+      <div class="headder">More Blogs from {{ DATA.current.userId.name }}.</div>
+      <div class="list">
+        <app-each-list-card *ngFor="let e of DATA.list" [DATA]="e"></app-each-list-card>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="error" class="ERROR">
+    <div class="header">{{ error.status }}</div>
+    <div class="message">{{ error.message }}</div>
+  </div>
+</div>
+<app-action-dialog [DATA]="deleteDialog" (ButtonClick)="dialogAction($event)"></app-action-dialog>

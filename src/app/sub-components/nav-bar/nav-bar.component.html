@@ -1,0 +1,89 @@
+<div *ngIf="screenWidth > 800" class="v_main">
+    <div class="top">
+        <img routerLink="" src="./assets/image/icecrame.png" alt="">
+    </div>
+    <div class="center">
+        <div class="btn-icon" routerLink="" matRipple [matRippleColor]="'#d1d1d160'" matTooltip="Home" [matTooltipPosition]="'right'">
+            <i class="fi fi-{{selectedVal=='HOME'?'sr':'rr'}}-home"></i>
+        </div>
+
+        <div class="btn-icon" routerLink="search" matRipple [matRippleColor]="'#d1d1d160'" matTooltip="Search"
+            [matTooltipPosition]="'right'">
+            <i class="fi fi-{{selectedVal=='SEARCH'?'sr':'rr'}}-search"></i>
+        </div>
+
+
+        <div class="btn-icon" routerLink="bookmark" matRipple [matRippleColor]="'#d1d1d160'" matTooltip="Bookmark"
+            [matTooltipPosition]="'right'">
+            <i class="fi fi-{{selectedVal=='BOOKMARK'?'sr':'rr'}}-bookmark"></i>
+        </div>
+
+
+        <div class="btn-icon" routerLink="stories" matRipple [matRippleColor]="'#d1d1d160'" matTooltip="Stories"
+            [matTooltipPosition]="'right'">
+            <i class="fi fi-{{selectedVal=='STORIES'?'sr':'rr'}}-file"></i>
+        </div>
+        
+    </div>
+    <div class="bottom">
+        <img [src]="userInfo.profilePic" (click)="open()" alt="">
+        <div *ngIf="showOptions" class="divcontainer">
+            <div class="bg" (click)="close()"></div>
+            <div class="containerDeskTop">
+                <div class="topNav">
+                    <div class="title">More Options</div>
+                    <div class="btn-icon" matRipple [matRippleColor]="'#d1d1d160'" (click)="close()"><i class="fi fi-rr-cross"></i></div>
+                </div>
+                <app-nav-options [user]="userInfo"></app-nav-options>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- on mobileVersion -->
+<div *ngIf="screenWidth <= 800" class="h_top">
+    <div class="left">
+        <img routerLink="" src="/assets/image/icecrame.png" alt=""> <span routerLink="">IceBlog</span>
+    </div>
+    <div class="right" (click)="open()" matRipple [matRippleColor]="'#d1d1d160'">
+        <img [src]="userInfo.profilePic" alt="">
+    </div>
+</div>
+
+
+<div *ngIf="screenWidth <= 800" class="h_bottom">
+    <div class="btn-icon" routerLink="" matRipple [matRippleColor]="'#d1d1d160'" matTooltip="Home" [matTooltipPosition]="'right'">
+        <i class="fi fi-{{selectedVal=='HOME'?'sr':'rr'}}-home"></i>
+    </div>
+
+    <div class="btn-icon" routerLink="search" matRipple [matRippleColor]="'#d1d1d160'" matTooltip="Search" [matTooltipPosition]="'right'">
+        <i class="fi fi-{{selectedVal=='SEARCH'?'sr':'rr'}}-search"></i>
+    </div>
+
+
+    <div class="btn-icon" routerLink="bookmark" matRipple [matRippleColor]="'#d1d1d160'" matTooltip="Bookmark" [matTooltipPosition]="'right'">
+        <i class="fi fi-{{selectedVal=='BOOKMARK'?'sr':'rr'}}-bookmark"></i>
+    </div>
+
+
+    <div class="btn-icon" routerLink="stories" matRipple [matRippleColor]="'#d1d1d160'" matTooltip="Stories" [matTooltipPosition]="'right'">
+        <i class="fi fi-{{selectedVal=='STORIES'?'sr':'rr'}}-file"></i>
+    </div>
+</div>
+
+
+
+
+<!-- phone menue -->
+
+
+<div *ngIf="showOptions && screenWidth <= 800" class="divcontainerMob">
+    <div class="bg" (click)="close()"></div>
+    <div class="containerPhone">
+        <div class="topNav">
+            <div class="title">More Options</div>
+            <div class="btn-icon" matRipple [matRippleColor]="'#d1d1d160'" (click)="close()"><i class="fi fi-rr-cross"></i></div>
+        </div>
+        <app-nav-options [user]="userInfo"></app-nav-options>
+    </div>
+</div>

@@ -1,0 +1,67 @@
+.main {
+  height: 100%;
+  width: 100%;
+
+  .container {
+    padding: 30px;
+    max-width: 500px;
+    height: 100%;
+    border-right: 1px solid #d1d1d1;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .logoContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .logo {
+        width: 22px;
+        height: 22px;
+      }
+
+      .title {
+        margin-left: 8px;
+        font-size: 20px;
+        font-weight: 500;
+      }
+    }
+
+    .heading{
+        font-size: 25px;
+        font-weight: 500;
+        margin-top: 40px;
+        margin-bottom: 30px;
+    }
+
+    .inputBox{
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .right{
+        display: flex;
+        justify-content: end;
+    }
+
+    .btn-2{
+        background-color: #353535;
+        color: #fff;
+        margin-top: 10px;
+    }
+
+    .bottom{
+        margin-top: 30px;
+        font-size: 18px;
+
+
+        span{
+            font-weight: 500;
+            color: #1d7fff;
+            cursor: pointer;
+        }
+    }
+  }
+}

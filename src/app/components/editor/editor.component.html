@@ -1,0 +1,36 @@
+<div *ngIf="!isLoading && !ERROR" class="main">
+  <div class="mainContainer">
+    <div class="topNav">
+      <div class="btn-icon" matRipple [matRippleColor]="'#d1d1d160'" routerLink="">
+        <i class="fi fi-rr-angle-small-left"></i> Home
+      </div>
+      <div class="btn-icon" matRipple [matRippleColor]="'#d1d1d160'" (click)="publish()">
+        <i class="fi fi-rr-check"></i> Next
+      </div>
+    </div>
+    <div class="body">
+      <quill-editor
+        (onEditorChanged)="GetInnerData($event)"
+        [modules]="modules"
+        [(ngModel)]="default_note"
+        [placeholder]="'Write your note...'"
+        [styles]="{ border: '0' }"
+      >
+      </quill-editor>
+    </div>
+  </div>
+</div>
+
+
+<!-- pop up -->
+<app-publishing-pupop></app-publishing-pupop>
+
+<!-- loading -->
+<div *ngIf="isLoading && !ERROR" class="LOADING">
+  <lottie-player src="/assets/animation/loading.json"  background="transparent"  speed="1"  style="width: 80px; height: 80px;"  loop  autoplay></lottie-player>
+</div>
+
+<div *ngIf="ERROR" class="ERROR">
+  <div class="header">{{ERROR.status}}</div>
+  <div class="message">{{ERROR.message}}</div>
+</div>

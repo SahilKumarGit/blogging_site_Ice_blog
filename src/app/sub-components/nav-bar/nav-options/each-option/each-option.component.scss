@@ -1,0 +1,28 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 8px;
+  user-select: none;
+  border-bottom: 1px solid #d1d1d1;
+  font-size: 16px;
+
+  .l {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    i{
+        margin-bottom: -4px;
+    }
+  }
+
+  .r {
+    width: calc(100% - 40px);
+    display: flex;
+    align-items: center;
+  }
+}

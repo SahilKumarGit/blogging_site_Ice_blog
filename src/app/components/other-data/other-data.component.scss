@@ -1,0 +1,30 @@
+.main {
+  user-select: none;
+  .btn-1 {
+    background-color: #353535;
+    color: white;
+    margin-bottom: 20px;
+  }
+
+  .container {
+    margin-bottom: 20px;
+
+    .title {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    .chips {
+      padding: 8px 12px;
+      border-radius: 40px;
+      background-color: #d1d1d1;
+    }
+  }
+
+  .gitHubInfo {
+    width: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+  }
+}

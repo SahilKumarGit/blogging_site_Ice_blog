@@ -1,0 +1,10 @@
+<div *ngIf="DATA" class="main">
+  <div class="dialog">
+    <div class="heading">{{DATA.Heading}}</div>
+    <div class="subHeading">{{DATA.SubHeading}}</div>
+    <div class="bottom">
+      <div class="btn-3 cancel" (click)="makeClick('NO')" matRipple [matRippleColor]="'#d1d1d160'">{{DATA.Cancel}}</div>
+      <div class="btn-3 ok" (click)="makeClick('YES')" matRipple [matRippleColor]="'#d1d1d160'">{{DATA.Ok}}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,85 @@
+.main {
+    border-bottom: 1px solid #d1d1d1;
+    margin-top: 30px;
+  
+    .body {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  
+      .left {
+        width: calc(100% - 120px);
+        padding-right: 40px;
+        .title {
+          width: fit-content;
+          cursor: pointer;
+          font-size: 20px;
+          font-weight: 800;
+          line-height: 1.4;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 2; /* number of lines to show */
+          line-clamp: 2;
+          -webkit-box-orient: vertical;
+        }
+  
+        .subTitle {
+          width: fit-content;
+          cursor: pointer;
+          font-size: 16px;
+          margin-top: 10px;
+          font-weight: 300;
+          line-height: 1.4;
+          font-family: "Times New Roman", Times, serif;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 3; /* number of lines to show */
+          line-clamp: 3;
+          -webkit-box-orient: vertical;
+        }
+  
+        .bottom-Box {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          user-select: none;
+  
+          .btn-icon {
+            margin-right: 10px;
+            font-size: 14px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 8px;
+          }
+        }
+      }
+      .right {
+        width: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 20px;
+  
+        img {
+          width: 120px;
+          height: 120px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  
+  .dot {
+    width: 4px;
+    height: 4px;
+    background-color: #727272;
+  }
+  

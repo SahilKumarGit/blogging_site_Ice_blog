@@ -1,0 +1,20 @@
+<div class="main" (scroll)="onScroll($event)">
+    <div #listContainer>
+        <div class="topComponent">
+            <div class="addBlogBox">
+                <i class="fi fi-rr-bookmark"></i>
+            </div>
+            <div class="text">My book marks</div>
+        </div>
+        <div class="Line"></div>
+        <div *ngIf="!ERROR" class="content">
+            <app-each-list-card *ngFor="let e of LIST ; let i = index" [DATA]="e" [isBookmarked]="true" (onDeleteItem)="removeFromList(i)"></app-each-list-card>
+            <div *ngIf="LIST.length == 0" class="LOADING">
+                <lottie-player src="/assets/animation/loading.json"  background="transparent"  speed="1"  style="width: 60px; height: 60px;"  loop  autoplay></lottie-player>
+            </div>
+        </div>
+        <div *ngIf="ERROR" class="error">
+            {{ERROR}}
+        </div>
+    </div>
+</div>

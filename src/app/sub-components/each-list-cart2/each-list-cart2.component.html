@@ -1,0 +1,32 @@
+<div *ngIf="DATA" class="main">
+    <div class="body">
+      <div class="left">
+        <div routerLink="/view/{{ DATA._id }}" class="title">{{ DATA.title }}</div>
+        <div routerLink="/view/{{ DATA._id }}" class="subTitle">
+          {{ DATA.innerText }}
+        </div>
+  
+        <div class="bottom-Box">
+          <div *ngIf="showBookmark" matTooltip="Add Bookmark" (click)="addBookMark()" class="btn-icon" matRipple [matRippleColor]="'#d1d1d160'">
+            <i class="fi fi-rr-bookmark"></i>
+          </div>
+  
+          <div *ngIf="showReport" matTooltip="Report Onthis Blog" class="btn-icon" matRipple [matRippleColor]="'#d1d1d160'">
+            <i class="fi fi-rr-bug"></i>
+          </div>
+  
+          <div *ngIf="showEdit" routerLink="/editor/{{ DATA._id }}" matTooltip="Edit Blog" class="btn-icon" matRipple [matRippleColor]="'#d1d1d160'">
+            <i class="fi fi-rr-pencil"></i>
+          </div>
+  
+          <div *ngIf="showDelete" matTooltip="Delete Blog" (click)="makeDelete()" class="btn-icon" matRipple [matRippleColor]="'#d1d1d160'">
+            <i class="fi fi-rr-trash"></i>
+          </div>
+        </div>
+      </div>
+      <div routerLink="/view/{{ DATA._id }}" class="right">
+        <img [src]="DATA.imgUrl || 'assets/image/noimg.jpg'" alt="" />
+      </div>
+    </div>
+  </div>
+  <app-action-dialog [DATA]="deleteDialog" (ButtonClick)="dialogAction($event)"></app-action-dialog>

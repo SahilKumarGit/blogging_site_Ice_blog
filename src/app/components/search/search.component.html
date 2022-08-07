@@ -1,0 +1,49 @@
+<div class="main" (scroll)="onScroll($event)">
+    <div #listContainer>
+        <div class="topComponent">
+            <div class="addBlogBox">
+                <i class="fi fi-rr-search"></i>
+            </div>
+            <input type="text" #searchInput 
+                (keyup)="isEmptyInput = searchInput.value==''" 
+                (keydown)="search = searchInput.value" 
+                (keydown.enter)="applySearch(searchInput)" 
+                [value]="search" class="text" placeholder="Search Blog's Title" 
+            />
+            <div *ngIf="!isEmptyInput" class="closeBtn" (click)="clearSearch()" matRipple [matRippleColor]="'#d1d1d160'"><i class="fi fi-rr-cross"></i></div>
+        </div>
+
+        <div class="Line">
+            <mat-progress-bar *ngIf="loading" class="progressBar" mode="indeterminate"></mat-progress-bar>
+
+        </div>
+
+
+        <div *ngIf="ERROR" class="error"> {{ERROR}} </div>
+
+
+        <div *ngIf="LIST.length <= 0">
+            <div *ngIf="TOPICLIST.length > 0" class="containerRC">
+                <div class="title">Avalable topics</div>
+                <div class="body">
+                    <mat-chip-list class="example-chip" cdkDropList cdkDropListOrientation="horizontal">
+                        <mat-chip class="example-box" *ngFor="let e of TOPICLIST" routerLink="/topic/{{e._id}}">{{e._id}} ({{e.count}})</mat-chip>
+                    </mat-chip-list>
+                </div>
+            </div>
+
+            <div *ngIf="HISTORYLIST.length > 0" class="contentList">
+                <div class="title">Recently Read</div>
+
+                <app-each-list-card *ngFor="let e of HISTORYLIST" [DATA]="e" ></app-each-list-card>
+            </div>
+        </div>
+
+        <div *ngIf="LIST.length > 0" class="contentList">
+            <div class="title">Search Result</div>
+            <app-each-list-card *ngFor="let e of LIST" [DATA]="e" ></app-each-list-card>
+        </div>
+
+
+    </div>
+</div>

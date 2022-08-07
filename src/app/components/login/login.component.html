@@ -1,0 +1,31 @@
+<div class="main">
+    <div class="container">
+        <div class="logoContainer">
+            <img src="assets/image/icecrame.png" alt="" class="logo">
+            <div class="title">IceBlog</div>
+        </div>
+
+        <div class="heading">Log in</div>
+
+        <form class="example-form" #formData = "ngForm" (submit)="submit(formData)">
+            <mat-form-field class="inputBox" appearance="outline">
+                <mat-label>Email Address</mat-label>
+                <input ngModel required matInput name="email" type="email">
+            </mat-form-field>
+
+            <mat-form-field class="inputBox" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input ngModel required matInput type="password" name="password">
+            </mat-form-field>
+
+            <div class="right">
+                <button class="btn-2">Log In</button>
+            </div>
+        </form>
+
+        <div class="bottom">
+            Don't have aaccount, <span routerLink="/register">Register</span>
+        </div>
+
+    </div>
+</div>

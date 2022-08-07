@@ -1,0 +1,50 @@
+.ql-editor {
+  height: calc(100% - 84px);
+}
+.main{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+
+  .mainContainer{
+    height: 100%;
+    max-width: 800px;
+    margin: auto;
+
+
+    .topNav{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row;
+      height: 50px;
+
+
+      .btn-icon{
+        min-width: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 8px 10px;
+        user-select: none;
+        cursor: pointer;
+        border-radius: 4px;
+
+        i{
+          margin-bottom: -4px;
+          margin-right: 8px;
+        }
+      }
+    }
+
+
+    .body{
+      height: calc(100% - 50px);
+      position: relative;
+    }
+  }
+}
+
+.LOADING{
+  height: 100%;
+}

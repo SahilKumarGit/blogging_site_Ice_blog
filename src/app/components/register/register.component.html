@@ -1,0 +1,47 @@
+<div class="main">
+  <div class="container">
+    <div class="logoContainer">
+      <img src="assets/image/icecrame.png" alt="" class="logo" />
+      <div class="title">IceBlog</div>
+    </div>
+
+    <div class="heading">Register Account</div>
+
+    <div class="imageProfile" (click)="selectImg()">
+      <img [src]="imgUri" alt="" />
+      <div class="icon"><i class="fi fi-rr-picture"></i></div>
+    </div>
+
+    <form class="example-form" #formData="ngForm" (submit)="submit(formData)">
+      <mat-form-field class="inputBox" appearance="outline">
+        <mat-label>User Name</mat-label>
+        <input ngModel required="true" matInput name="name" />
+      </mat-form-field>
+
+      <mat-form-field class="inputBox" appearance="outline">
+        <mat-label>Email Address</mat-label>
+        <input ngModel required="true" matInput name="email" type="email" />
+      </mat-form-field>
+
+      <mat-form-field class="inputBox" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input ngModel required="true" matInput type="password" name="password" />
+      </mat-form-field>
+
+      <div class="right">
+        <button class="btn-2" matRipple [matRippleColor]="'#d1d1d160'">
+          Register
+        </button>
+      </div>
+    </form>
+
+    <div class="bottom">
+      Already have an aaccount, <span routerLink="/login">Login</span>
+    </div>
+  </div>
+</div>
+
+<app-img-resizer
+  [rawImg]="rawImg"
+  (cropView)="cropedData($event)"
+></app-img-resizer>

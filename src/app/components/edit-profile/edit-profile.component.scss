@@ -1,0 +1,90 @@
+.main {
+  padding-top: 20px;
+  height: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  user-select: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  .content {
+    max-width: 800px;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+      max-width: 450px;
+      width: 100%;
+      min-height: 300px;
+      height: fit-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      .profile {
+        position: relative;
+        height: 150px;
+        width: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        user-select: none;
+
+        img {
+          width: 150px;
+          height: 150px;
+          border-radius: 150px;
+        }
+
+        .icon {
+          height: 35px;
+          width: 35px;
+          border-radius: 35px;
+          background-color: #d1d1d1;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          right: 8px;
+          bottom: 2px;
+          font-size: 16px;
+
+          i {
+            margin-bottom: -4px;
+          }
+        }
+      }
+
+      .input {
+        margin-top: 20px;
+
+        .w100 {
+          width: 100%;
+        }
+
+        .right{
+          display: flex;
+          justify-content: end;
+
+          .btn-2{
+            background-color: #353535;
+            color: #fff;
+          }
+        }
+      }
+    }
+
+    .LOADING {
+      height: 500px;
+    }
+  }
+}
+
+.LOADING{
+  height: 100%;
+}

@@ -1,0 +1,30 @@
+<div class="main" (scroll)="onScroll($event)">
+  <div #listContainer>
+    <div class="topComponent">
+      <img src="/assets/image/hastag.png" alt="">
+      <div class="title">#{{topic}}</div>
+    </div>
+
+    <div class="content">
+      <app-each-list-card
+        *ngFor="let e of LIST"
+        [DATA]="e"
+      ></app-each-list-card>
+
+      <div *ngIf="LIST.length == 0 && !ERROR" class="LOADING">
+        <lottie-player
+          src="/assets/animation/loading.json"
+          background="transparent"
+          speed="1"
+          style="width: 60px; height: 60px"
+          loop
+          autoplay
+        ></lottie-player>
+      </div>
+    </div>
+
+    <div *ngIf="ERROR" class="error">
+      {{ ERROR }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<app-nav-bar [screenWidth]="screenWidth"></app-nav-bar>
+<div class="main">
+    <div class=" {{screenWidth > 1100? 'left' : 'fullBox'}} {{screenWidth > 800? 'pl-100' : 'gap50'}}">
+        <router-outlet></router-outlet>
+    </div>
+    <div *ngIf="screenWidth > 1100" class="right">
+        <app-other-data></app-other-data>
+    </div>
+</div>

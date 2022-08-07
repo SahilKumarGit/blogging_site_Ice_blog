@@ -1,0 +1,29 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+
+  .profileContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    user-select: none;
+    cursor: pointer;
+
+    img {
+      height: 80px;
+      width: 80px;
+      border-radius: 100px;
+    }
+    .name {
+      font-size: 20px;
+      font-weight: 500;
+      margin-top: 10px;
+    }
+  }
+}

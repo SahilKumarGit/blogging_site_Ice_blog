@@ -1,0 +1,16 @@
+<div class="main">
+    <div class="btn-1" matRipple [matRippleColor]="'#85858570'" routerLink="editor">
+        <i class="fi fi-rr-plus"></i>Add New Blog
+    </div>
+
+    <div class="container">
+        <div class="title">Avalable topics</div>
+        <div class="body">
+            <mat-chip-list class="example-chip" cdkDropList cdkDropListOrientation="horizontal">
+                <mat-chip class="example-box" *ngFor="let e of TOPICLIST" routerLink="/topic/{{e._id}}">{{e._id}} ({{e.count}})</mat-chip>
+            </mat-chip-list>
+        </div>
+    </div>
+
+    <img src="assets/image/card1.png" alt="" class="gitHubInfo">
+</div>

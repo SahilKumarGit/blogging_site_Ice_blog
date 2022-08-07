@@ -1,0 +1,18 @@
+<div class="main" (scroll)="onScroll($event)">
+  <div #listContainer>
+    <div class="topComponent">
+      <div class="addBlogBox">
+        <i class="fi fi-rr-home"></i>
+      </div>
+      <div class="text">Keep up with the latest in any topic</div>
+    </div>
+    <div class="Line"></div>
+    <div class="content">
+        <app-each-list-card *ngFor="let e of LIST" [DATA]="e"></app-each-list-card>
+
+        <div *ngIf="LIST.length == 0" class="LOADING">
+            <lottie-player src="/assets/animation/loading.json"  background="transparent"  speed="1"  style="width: 60px; height: 60px;"  loop  autoplay></lottie-player>
+        </div>
+    </div>
+  </div>
+</div>

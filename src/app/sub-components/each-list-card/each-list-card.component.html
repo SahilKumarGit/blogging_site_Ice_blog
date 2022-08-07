@@ -1,0 +1,38 @@
+<div *ngIf="DATA" class="main">
+  <div class="topBox">
+    <div class="userIcon" routerLink="/profile/{{ DATA.userId._id }}">
+      <img [src]="DATA.userId.profilePic || 'assets/image/user.png'" alt="" />
+    </div>
+    <div class="userInfo">
+      <div class="name" routerLink="/profile/{{ DATA.userId._id }}">{{ DATA.userId.name }} <img title="Verified user" *ngIf="DATA.userId.verified" src="/assets/image/verified.png" title="verified user" alt=""></div>
+      <span class="dot"></span>
+      <div class="date" title="at {{DATA.createdAt | dateTime:'hh:mm a'}}">{{ DATA.createdAt | dateTime }}</div>
+    </div>
+  </div>
+
+  <div class="body">
+    <div class="left">
+      <div routerLink="/view/{{ DATA._id }}" class="title">{{ DATA.title }}</div>
+      <div routerLink="/view/{{ DATA._id }}" class="subTitle">
+        {{ DATA.innerText }}
+      </div>
+
+      <div class="bottom-Box">
+        <div *ngIf="!isBookmarked" [matTooltip]="'Add Bookmark'" (click)="addBookMark()" class="btn-icon" matRipple [matRippleColor]="'#d1d1d160'">
+          <i class="fi fi-rr-bookmark"></i>
+        </div>
+
+        <div *ngIf="isBookmarked" [matTooltip]="'Remove Bookmark'" (click)="RemoveBookMark()" class="btn-icon" matRipple [matRippleColor]="'#d1d1d160'">
+          <i class="fi fi-rr-cross"></i>
+        </div>
+
+        <div class="btn-icon" [matTooltip]="'Report Blog'" matRipple [matRippleColor]="'#d1d1d160'">
+          <i class="fi fi-rr-bug"></i>
+        </div>
+      </div>
+    </div>
+    <div routerLink="/view/{{ DATA._id }}" class="right">
+      <img [src]="DATA.imgUrl || 'assets/image/noimg.jpg'" alt="" />
+    </div>
+  </div>
+</div>

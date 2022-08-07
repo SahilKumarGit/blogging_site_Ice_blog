@@ -1,0 +1,51 @@
+<div *ngIf="data" class="main">
+  <div class="back"></div>
+  <div class="containerx">
+    <div class="top">
+      <div class="title">Publish Blog</div>
+      <div
+        class="btn-icon"
+        matRipple
+        [matRippleColor]="'#d1d1d160'"
+        (click)="close()"
+      >
+        <i class="fi fi-rr-cross"></i>
+      </div>
+    </div>
+
+    <div *ngIf="topicList.length > 0" class="body">
+      <form class="example-form" #formData="ngForm" (submit)="submit(formData)">
+        <mat-form-field class="input-100" appearance="outline">
+          <mat-label>Enter Title</mat-label>
+          <input
+            ngModel
+            [(ngModel)]="data.title"
+            required="true"
+            matInput
+            placeholder="Ex. Its a joke"
+            name="title"
+          />
+        </mat-form-field>
+
+        <mat-form-field class="input-100" appearance="outline">
+          <mat-label>Select Topic</mat-label>
+          <mat-select
+            ngModel
+            [(ngModel)]="data.topic"
+            required="true"
+            placeholder="Ex. Art"
+            name="topic"
+          >
+            <mat-option *ngFor="let e of topicList" [value]="e.name">
+              {{e.name}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <div class="leftBox">
+          <button class="btn-2"><i class="fi fi-rr-check"></i>Publish</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

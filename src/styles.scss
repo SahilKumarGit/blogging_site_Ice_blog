@@ -1,1 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;400;500;800;900&family=Roboto+Mono:wght@300;500&display=swap');
 /* You can add global styles to this file, and also import other style files */
+html body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  height: 100%;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.Line {
+  height: 1px;
+  background-color: #d1d1d1;
+}
+
+.btn-1 {
+  padding: 14px;
+  border-radius: 50px;
+  user-select: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  i {
+    font-size: 14px;
+    margin-right: 8px;
+    margin-bottom: -4px;
+  }
+}
+
+.btn-2 {
+  padding: 14px 30px;
+  border-radius: 4px;
+  font-size: 18px;
+  user-select: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+}
+.btn-3 {
+  padding: 7px 15px;
+  border-radius: 4px;
+  font-size: 16px;
+  user-select: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+}
+
+.LOADING {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.ERROR {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: gray;
+
+  .header {
+    font-size: 100px;
+    font-weight: 600;
+    color: rgb(200, 200, 200);
+  }
+
+  .message {
+    font-size: 16px;
+    font-weight: 350;
+  }
+}
+
+
+pre.ql-syntax {
+  background-color: #23241f !important;
+  color: #f8f8f2 !important;
+  overflow: auto;
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-family: 'Roboto Mono', monospace;
+  // font-family: 'Libre Franklin', sans-serif;
+}
+
+blockquote{
+  border-left: 4px solid rgb(0, 206, 171) !important;
+  padding-left: 10px !important;
+}
+
+@media screen and (min-width: 801px) {
+  /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1ce;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(216, 216, 216);
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(160, 160, 160);
+  }
+}
+
+@import url("assets/flaticon/uicons-regular-rounded/css/uicons-regular-rounded.css");
+@import url("assets/flaticon/uicons-solid-rounded/css/uicons-solid-rounded.css");

@@ -1,0 +1,58 @@
+<div *ngIf="!loading" class="main">
+  <div class="content">
+    <div class="container">
+      <div class="profile" (click)="selectImg()">
+        <img [src]="DATA.profilePic || '/assets/image/user.png'" alt="" />
+        <div class="icon"><i class="fi fi-rr-picture"></i></div>
+      </div>
+      <div class="input">
+        <form #formData="ngForm" (submit)="submit(formData)">
+          <mat-form-field class="w100" appearance="outline">
+            <mat-label>Full Name</mat-label>
+            <input
+              required="trur"
+              ngModel
+              matInput
+              [(ngModel)]="DATA.name"
+              name="name"
+              placeholder="Sahil Kumar Sahoo"
+            />
+          </mat-form-field>
+          <mat-form-field class="w100" appearance="outline">
+            <mat-label>Email Address</mat-label>
+            <input
+              required="trur"
+              ngModel
+              matInput
+              [(ngModel)]="DATA.email"
+              name="email"
+              placeholder="email.example@yahoo.com"
+            />
+          </mat-form-field>
+
+          <div class="right">
+            <button class="btn-2" matRipple [matRippleColor]="'#d1d1d160'">
+              Update Profile
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="loading" class="LOADING">
+  <lottie-player
+    src="/assets/animation/loading.json"
+    background="transparent"
+    speed="1"
+    style="width: 80px; height: 80px"
+    loop
+    autoplay
+  ></lottie-player>
+</div>
+
+<app-img-resizer
+  [rawImg]="rawImg"
+  (cropView)="cropedData($event)"
+></app-img-resizer>

@@ -1,0 +1,53 @@
+<div *ngIf="DATA" class="main">
+  <div class="topComponent">
+    <img [src]="DATA.user.profilePic" alt="" />
+    <div class="title">{{ DATA.user.name }} <img *ngIf="DATA.user.verified" src="/assets/image/verified.png" title="verified user" alt=""></div>
+  </div>
+
+  <div class="topComponent2">
+    <div class="left" matRipple [matRippleColor]="'#d1d1d160'">
+      {{ DATA.user.follower }} Followers
+    </div>
+    <div class="center"></div>
+    <div class="right" matRipple [matRippleColor]="'#d1d1d160'">
+      {{ DATA.user.following }} Following
+    </div>
+  </div>
+
+  <div *ngIf="!DATA.user.viewByOwner" class="topComponent2 boxX">
+    <div *ngIf="!loadingOnFollow" class="btn-1 {{isFollowed? 'unfollow':'follow'}}" matRipple [matRippleColor]="'#d1d1d160'" (click)="followUnfollow()">
+      <i class="fi fi-rr-{{ isFollowed? 'cross' : 'plus'}}"></i>{{ isFollowed? 'Unfollow' : 'Follow'}}
+    </div>
+    <lottie-player *ngIf="loadingOnFollow" src="/assets/animation/loading.json"  background="transparent"  speed="1"  style="width: 40px; height: 40px;" loop autoplay></lottie-player>
+  </div>
+
+  <!-- <div class="Line"></div> -->
+
+  <div *ngIf="DATA.blog.length > 0" class="contentList">
+    <app-each-list-cart2
+      *ngFor="let e of DATA.blog; let i = index"
+      [DATA]="e"
+      [showDelete]="DATA.user.viewByOwner"
+      [showEdit]="DATA.user.viewByOwner"
+      [showBookmark]="!DATA.user.viewByOwner"
+      [showReport]="!DATA.user.viewByOwner"
+      (onDeleteItem)="RemoveFromList(i)"
+    ></app-each-list-cart2>
+  </div>
+</div>
+
+<div *ngIf="!DATA && !ERROR" class="LOADING">
+  <lottie-player
+    src="/assets/animation/loading.json"
+    background="transparent"
+    speed="1"
+    style="width: 60px; height: 60px"
+    loop
+    autoplay
+  ></lottie-player>
+</div>
+
+<div *ngIf="ERROR" class="ERROR">
+  <div class="header">{{ ERROR.status }}</div>
+  <div class="message">{{ ERROR.message }}</div>
+</div>

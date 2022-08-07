@@ -1,0 +1,11 @@
+<div class="main">
+  <div class="profileContainer" routerLink="/profile/{{user._id}}">
+    <img [src]="user.profilePic" alt="" />
+    <div class="name">{{ user.name }}</div>
+  </div>
+  <div class="allOptions">
+    <app-each-option routerLink="/profile/update" [option]="{ title: 'Edit Profile', icon: 'fi fi-rr-pencil' }"></app-each-option>
+    <app-each-option [option]="{ title: 'Privacy Policy', icon: 'fi fi-rr-shield-check' }"></app-each-option>
+    <app-each-option (click)="logout()" [option]="{ title: 'Log Out', icon: 'fi fi-rr-sign-out-alt' }"></app-each-option>
+  </div>
+</div>

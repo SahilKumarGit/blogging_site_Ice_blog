@@ -1,0 +1,49 @@
+.main{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 10;
+
+    .dialog{
+        max-width: 400px;
+        width: 100%;
+        padding: 16px;
+        background-color: #fff;
+        border-radius: 8px;
+
+        .heading{
+            font-size: 20px;
+            font-weight: 500;
+        }
+        .subHeading{
+            font-size: 16px;
+        }
+        .bottom{
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            flex-direction: row;
+            margin-top: 16px;
+
+            .btn-3{
+                margin-left: 16px;
+            }
+
+            .cancel{
+                background-color: #d1d1d1;
+            }
+
+            .ok{
+                background-color: #353535;
+                color: #fff;
+            }
+        }
+    }
+}

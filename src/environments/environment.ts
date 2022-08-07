@@ -1,16 +1,33 @@
-// This file can be replaced during build by using the `fileReplacements` array.
-// `ng build` replaces `environment.ts` with `environment.prod.ts`.
-// The list of file replacements can be found in `angular.json`.
-
 export const environment = {
   production: false
 };
-
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+const baseUrl = "http://192.168.0.108:3001/api"
+export const url = {
+  user: {
+    register: `${baseUrl}/register`,
+    login: `${baseUrl}/login`,
+    basic: `${baseUrl}/user/basic`,
+    update: `${baseUrl}/user/profile/update`,
+    profile: `${baseUrl}/user/profile`,
+    followUnfollow: `${baseUrl}/user/followUnfollow`,
+  },
+  topic: {
+    list: `${baseUrl}/topic/list`,
+    avalable: `${baseUrl}/topic/avalable`,
+  },
+  blog: {
+    add: `${baseUrl}/blog/add`,
+    update: `${baseUrl}/blog/update`,
+    list: `${baseUrl}/blog/list`,
+    view: `${baseUrl}/blog/view`,
+    history: `${baseUrl}/blog/readHistory`,
+    bookmark: {
+      add: `${baseUrl}/blog/addBookmark`,
+      list: `${baseUrl}/blog/bookmarks`,
+      remove: `${baseUrl}/blog/removeBookmark`,
+    },
+    myBlogs:`${baseUrl}/blog/myBlogs`,
+    delete:`${baseUrl}/blog/delete`,
+    my:`${baseUrl}/blog/my`,
+  }
+}
