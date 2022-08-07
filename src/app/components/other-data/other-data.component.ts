@@ -29,4 +29,8 @@ export class OtherDataComponent implements OnInit {
     })
   }
 
+  open(url:string){
+    window.open(url)
+  }
+
 }

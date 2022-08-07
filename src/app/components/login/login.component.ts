@@ -33,10 +33,10 @@ export class LoginComponent implements OnInit {
     const data = { ...value }
     this.user.login(data).subscribe((o: any) => {
       this.user.setJwt(o.data.token)
+      this.user.getUserInfo();
       this.basic.loadingAction(false)
       this.loading = false
       this.router.navigateByUrl('')
-
     }, (x: any) => {
       this.handel.networkError(x)
       this.basic.loadingAction(false)

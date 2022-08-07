@@ -19,7 +19,7 @@ export class EditorComponent implements OnInit {
   innerHtml: any = ""
   innerText: any = ""
   imageUrl: any = null
-  default_note: any = "dfgfvv"
+  default_note: any = ""
   bid: any = null
   token: any = null
   isLoading: boolean = false;
